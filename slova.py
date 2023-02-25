@@ -63,15 +63,15 @@ def show_menu():
     gameModel.current_record = 0
     print("1. Начать игру\n2. Правила\n3. Рекорды\n4. Выйти из игры")
     key = 0
-    while key not in [1,2,3,4]:
-        key = int(input())
-    if key == 1:
+    while key not in ["1","2","3","4"]:
+        key = input()
+    if key == "1":
         show_theme_menu()
-    if key == 2:
+    if key == "2":
         show_rules()
-    if key == 3:
+    if key == "3":
         show_record()
-    if key == 4:
+    if key == "4":
         sys.exit()
 def show_rules():
     clear()
@@ -89,13 +89,13 @@ def show_theme_menu():
     clear()
     print("1. Города России\n2. Страны мира\n3. Столицы стран мира")
     key = 0
-    while key not in [1,2,3]:
-        key = int(input())
-    if key == 1:
+    while key not in ["1","2","3"]:
+        key = input()
+    if key == "1":
         gameModel.current_theme = "data/cities.txt"
-    if key == 2:
+    if key == "2":
         gameModel.current_theme = "data/countries.txt"
-    if key == 3:
+    if key == "3":
         gameModel.current_theme = "data/capitals.txt"
     read_theme(gameModel.current_theme)
     gameplay(gameModel.theme_words[random.randint(0,len(gameModel.theme_words)-1)])
